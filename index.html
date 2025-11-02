@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bible Wise Words — Find a Verse for How You Feel</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <div class="hero-inner">
+          <h1>Bible Wise Words</h1>
+          <p class="tag">Type how you feel and find a Bible verse that meets you there.</p>
+          <!-- animated character: smiling figure carrying a cross (decorative) -->
+          <div class="hero-animation" aria-hidden="true">
+            <svg id="jesus-walk" viewBox="0 0 260 70" width="100%" height="70" preserveAspectRatio="xMidYMid meet" role="img" aria-label="decorative animation of a smiling figure carrying a cross">
+              <defs>
+                <style>
+                  .sil { fill:#2b2b2b; opacity:0.98 }
+                  .cross { fill:#5b3a2e }
+                  .smile { stroke:#fff; stroke-width:1.5; fill:none }
+                </style>
+              </defs>
+              <rect x="0" y="56" width="260" height="14" fill="rgba(0,0,0,0.04)" />
+              <g id="walker" transform="translate(-60,0)">
+                <g class="figure">
+                  <!-- body -->
+                  <path class="sil" d="M24 36c1-5 4-8 7-9 3-1 6 0 7 3 1 3-1 6-4 9-3 3-7 4-10 4-2 0-4-4-0-7z" />
+                  <!-- head -->
+                  <circle class="sil" cx="34" cy="17" r="6" />
+                  <!-- smile -->
+                  <path class="smile" d="M31 18 q3 3 6 0" />
+                </g>
+                <!-- cross held over shoulder -->
+                <g class="cross" transform="translate(14,4)">
+                  <rect x="0" y="-8" width="3" height="28" />
+                  <rect x="-9" y="6" width="20" height="3" />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <form id="feel-form" class="feel-form" aria-label="Find verse by feeling">
+            <input id="feel-input" type="search" placeholder="I feel anxious, lonely, grateful..." aria-label="How are you feeling?" />
+            <button type="submit">Find Verse</button>
+          </form>
+          <div class="suggestions">Try: anxious, lonely, overwhelmed, joyful, thankful</div>
+        </div>
+        <div class="hero-quote" aria-hidden="false">
+          <blockquote>"The Lord is my light and my salvation; whom shall I fear? The LORD is the stronghold of my life; of whom shall I be afraid?"</blockquote>
+          <cite>— Psalm 27:1</cite>
+        </div>
+      </header>
+
+  <section id="result" class="result" hidden>
+        <div class="result-card">
+          <div class="result-body">
+            <h2 id="feeling-title"></h2>
+            <div id="verses-list" class="verses-list">
+              <!-- multiple verses will be injected here -->
+            </div>
+            <div id="verse-ref" class="verse-ref" aria-hidden="true"></div>
+            <div class="actions">
+              <button id="another-btn">Show another set</button>
+              <button id="copy-btn">Copy all verses</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>Built with love — Christian values: compassion, hope, grace.</p>
+  <p>Verses shown are short demo phrasing. To enable whole-Bible search, add a public-domain KJV JSON named <code>bible_kjv.json</code> to the project root (array of {book,chapter,verse,text}).</p>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
